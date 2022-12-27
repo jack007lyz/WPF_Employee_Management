@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_Employee_Management.DB;
 
 namespace WPF_Employee_Management
 {
@@ -23,6 +24,14 @@ namespace WPF_Employee_Management
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (EmployeeManagementWpfContext db = new EmployeeManagementWpfContext())
+            {
+
+            }
         }
     }
 }
