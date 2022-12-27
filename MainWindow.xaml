@@ -5,8 +5,121 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Employee_Management"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Employee Management" Name = "ManagementMainWindow" Height="540" Width="1200" FontSize="24" FontWeight="Bold" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Icon="/ghost_icon.png" ResizeMode="NoResize">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Source="/Images/ghost_icon.png"/>
+        <ContentControl Grid.Column="1" Content="" Grid.Row="1" Grid.RowSpan="8" Height="NaN" Width="NaN"/>
+        <Label x:Name="lblWindowName" Grid.Column="1" Content="Windows Name" HorizontalAlignment="Left" Margin="373,0,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <StackPanel Grid.Row="1" Margin="0,2,0,0">
+            <Button Grid.Row="1" Name="btnEmployee" Height="60" Width="250" HorizontalAlignment="Left">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="EmployeeImage" HorizontalAlignment="Left" Height="auto" Width="73" Margin="0,0,0,0" Source="/Images/employee.png"/>
+                    <TextBlock Text="Employee" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Margin="0,2,0,0">
+            <Button Grid.Row="2" Name="btnTask" Height="60" Width="250" HorizontalAlignment="Left">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="TaskImage" HorizontalAlignment="Left" Height="auto" Width="73" Margin="0,0,0,0" Source="/Images/task.png"/>
+                    <TextBlock Text="Task" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Margin="0,2,0,0">
+            <Button Grid.Row="3" Name="btnSalary" Height="60" Width="250" HorizontalAlignment="Left">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="SalaryImage" HorizontalAlignment="Left" Height="auto" Width="73" Margin="0,0,0,0" Source="/Images/salary_icon.png"/>
+                    <TextBlock Text="Salary" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Margin="0,2,0,0">
+            <Button Grid.Row="4" Name="btnPermission" Height="60" Width="250" HorizontalAlignment="Left">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="PermissionImage" HorizontalAlignment="Left" Height="auto" Width="73" Margin="0,0,0,0" Source="/Images/permission_icon.png"/>
+                    <TextBlock Text="Permission" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Margin="0,2,0,0">
+            <Button Grid.Row="5" Name="btnDepartment" Height="60" Width="250" HorizontalAlignment="Left">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="DepartmentImage" HorizontalAlignment="Left" Height="auto" Width="73" Margin="0,0,0,0" Source="/Images/department_icon.png"/>
+                    <TextBlock Text="Department" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Margin="0,2,0,0">
+            <Button Grid.Row="6" Name="btnPosition" Height="60" Width="250" HorizontalAlignment="Left">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="PositionImage" HorizontalAlignment="Left" Height="auto" Width="73" Margin="0,0,0,0" Source="/Images/position_icon.png"/>
+                    <TextBlock Text="Position" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="7" Margin="0,2,0,0">
+            <Button Grid.Row="7" Name="btnLogOut" Height="60" Width="250" HorizontalAlignment="Left">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="LogOutImage" HorizontalAlignment="Left" Height="auto" Width="73" Margin="0,0,0,0" Source="/Images/logout_icon.png"/>
+                    <TextBlock Text="Log Out" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="8" Margin="0,2,0,0">
+            <Button Grid.Row="8" Name="btnExit" Height="60" Width="250" HorizontalAlignment="Left">
+                <Grid Width="230">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="ExitImage" HorizontalAlignment="Left" Height="auto" Width="73" Margin="0,0,0,0" Source="/Images/exit_icon.png"/>
+                    <TextBlock Text="Exit" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
