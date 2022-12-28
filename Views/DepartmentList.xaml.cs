@@ -13,32 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF_Employee_Management.DB;
-using WPF_Employee_Management.ViewModels;
 
-namespace WPF_Employee_Management
+namespace WPF_Employee_Management.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DepartmentList.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DepartmentList : UserControl
     {
-        public MainWindow()
+        public DepartmentList()
         {
             InitializeComponent();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
             using (EmployeeManagementWpfContext db = new EmployeeManagementWpfContext())
             {
-
+                List<Department> departments = db.Departments.ToList();
+                gridDepartment.ItemsSource = departments;
             }
-        }
-
-        private void btnDepartment_Click(object sender, RoutedEventArgs e)
-        {
-            lblWindowName.Content = "Department List";
-            DataContext = new DepartmentViewModel();
         }
     }
 }
