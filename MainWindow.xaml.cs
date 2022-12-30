@@ -40,5 +40,11 @@ namespace WPF_Employee_Management
             lblWindowName.Content = "Department List";
             DataContext = new DepartmentViewModel();
         }
+
+        private void btnPosition_Click(object sender, RoutedEventArgs e)
+        {
+            lblWindowName.Content = "Position List";
+            DataContext = new PositionViewModel();
+        }
     }
 }

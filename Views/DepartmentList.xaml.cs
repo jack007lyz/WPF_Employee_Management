@@ -26,7 +26,31 @@ namespace WPF_Employee_Management.Views
             InitializeComponent();
             using (EmployeeManagementWpfContext db = new EmployeeManagementWpfContext())
             {
-                List<Department> departments = db.Departments.ToList();
+                List<Department> departments = db.Departments.OrderBy(d=>d.DepartmentName).ToList();
+                gridDepartment.ItemsSource = departments;
+            }
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            DepartmentPage departmentPage = new DepartmentPage();
+            departmentPage.ShowDialog();
+            using (EmployeeManagementWpfContext db = new EmployeeManagementWpfContext())
+            {
+                List<Department> departments = db.Departments.OrderBy(d => d.DepartmentName).ToList();
+                gridDepartment.ItemsSource = departments;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Department dpt = (Department)gridDepartment.SelectedItem;
+            DepartmentPage page = new DepartmentPage();
+            page.Department = dpt;
+            page.ShowDialog();
+            using (EmployeeManagementWpfContext db = new EmployeeManagementWpfContext())
+            {
+                List<Department> departments = db.Departments.OrderBy(d => d.DepartmentName).ToList();
                 gridDepartment.ItemsSource = departments;
             }
         }
